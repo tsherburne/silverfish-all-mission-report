@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?><magicdraw><callbehavioraction id="5db89d42-5918-4ce2-97cf-c26a8beb7d8a" refElementId="5db89d42-5918-4ce2-97cf-c26a8beb7d8a" humanType="Call Behavior Action" classType="CallBehaviorAction" requireSort="node" icon="index_files/icon_callbehavioraction_460998960.jpg"><visibility humanName="Visibility">public</visibility><qualifiedName humanName="Qualified Name" mode="e">Systems::A2::A2 Control Structure::A2::Obstacle::Obstacle::::Monitor Field::Obstacle Monitor Field::::NA</qualifiedName><owner refid="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" refElementId="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" humanType="Structured Activity Node" classType="StructuredActivityNode" name="" icon="index_files/icon_structuredactivitynode_468001043.jpg" humanName="Owner" mode="s,e"/><ownedElement humanName="Owned Element"><inputpin refid="985fdba2-199b-40bd-82de-78d8e281ed8a" refElementId="985fdba2-199b-40bd-82de-78d8e281ed8a" humanType="Input Pin" classType="InputPin" name="ss_report" icon="index_files/icon_inputpin_623169658.jpg"/></ownedElement><outgoing humanName="Outgoing"><controlflow refid="2b30ba19-1db1-498b-8bd5-9c72f6699b3d" refElementId="2b30ba19-1db1-498b-8bd5-9c72f6699b3d" humanType="Control Flow" classType="ControlFlow" name="Control Flow[NA -> ]" isRelationship="true" icon="index_files/icon_controlflow_1619402333.jpg"/></outgoing><name humanName="Name" mode="s,e">NA</name><isSynchronous humanName="Is Synchronous" mode="e">true</isSynchronous><isLocallyReentrant humanName="Is Locally Reentrant">false</isLocallyReentrant><isLeaf humanName="Is Leaf">false</isLeaf><input humanName="Input"><inputpin refid="985fdba2-199b-40bd-82de-78d8e281ed8a" refElementId="985fdba2-199b-40bd-82de-78d8e281ed8a" humanType="Input Pin" classType="InputPin" name="ss_report" icon="index_files/icon_inputpin_623169658.jpg"/></input><inStructuredNode refid="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" refElementId="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" humanType="Structured Activity Node" classType="StructuredActivityNode" name="" icon="index_files/icon_structuredactivitynode_468001043.jpg" humanName="In Structured Node"/><inGroup humanName="In Group"><structuredactivitynode refid="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" refElementId="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" humanType="Structured Activity Node" classType="StructuredActivityNode" name="" icon="index_files/icon_structuredactivitynode_468001043.jpg"/></inGroup><documentation humanName="Documentation"></documentation><context refid="e713dddf-89cc-4e06-8be6-32aa0e3566e1" refElementId="e713dddf-89cc-4e06-8be6-32aa0e3566e1" humanType="Subsystem" classType="Class" name="Obstacle" icon="index_files/icon_subsystem_1278374552.jpg" humanName="Context"/><body humanName="Body">def signal = ss_report.toString();
+// get signal name from signal instance (divided by @ symbol)
+def signalName = signal.substring(0, signal.indexOf('@'));
+
+obs_report = ALH.createSignal("OBS: SS Report");
+
+// set obstacle location field location
+ALH.setValue(obs_report, "location", location.location);
+
+switch (signalName) {
+  case "SS: No Activity":
+    ALH.setValue(obs_report, "activity", "No Activity");
+    break;
+  case "SS: Human Detected":
+    ALH.setValue(obs_report, "activity", "Human Activity");
+    break;
+  case "SS: Vehicle Detected":
+    ALH.setValue(obs_report, "activity", "Vechicle Activity");
+    break;
+  default:
+    println("Unknown SS Signal");
+    break;
+}
+ALH.sendSignal(obs_report, acs);</body><behavior refid="5319ff0f-408d-432c-9f79-413a5c13180d" refElementId="5319ff0f-408d-432c-9f79-413a5c13180d" humanType="Opaque Behavior" classType="OpaqueBehavior" name="Forward Sensor Report" icon="index_files/icon_opaquebehavior_229543438.jpg" humanName="Behavior" mode="s,e"/><argument humanName="Argument"><inputpin refid="985fdba2-199b-40bd-82de-78d8e281ed8a" refElementId="985fdba2-199b-40bd-82de-78d8e281ed8a" humanType="Input Pin" classType="InputPin" name="ss_report" icon="index_files/icon_inputpin_623169658.jpg"/></argument><TO_DO humanName="To Do" mode="s,e"></TO_DO><ActiveHyperlink humanName="Active Hyperlink"></ActiveHyperlink><report_appliedStereotype_tags humanName="Applied Stereotype" requireSort="element" mode="s,e"/></callbehavioraction></magicdraw>

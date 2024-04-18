@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?><magicdraw><opaqueaction id="ad5f0fcb-053b-4aeb-ba8b-0461b151fca0" refElementId="ad5f0fcb-053b-4aeb-ba8b-0461b151fca0" humanType="Opaque Action" classType="OpaqueAction" requireSort="node" icon="index_files/icon_opaqueaction_1493625851.jpg"><visibility humanName="Visibility">public</visibility><qualifiedName humanName="Qualified Name" mode="e">Systems::A2::A2 Control Structure::A2::Obstacle::Obstacle::::Monitor Field::Obstacle Monitor Field::::Fire Munitions</qualifiedName><owner refid="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" refElementId="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" humanType="Structured Activity Node" classType="StructuredActivityNode" name="" icon="index_files/icon_structuredactivitynode_468001043.jpg" humanName="Owner" mode="s,e"/><outgoing humanName="Outgoing"><controlflow refid="fb0fbc59-8ec0-4d96-a88e-3dcf23aa1d9b" refElementId="fb0fbc59-8ec0-4d96-a88e-3dcf23aa1d9b" humanType="Control Flow" classType="ControlFlow" name="Control Flow[Fire Munitions -> ]" isRelationship="true" icon="index_files/icon_controlflow_1619402333.jpg"/></outgoing><name humanName="Name" mode="s,e">Fire Munitions</name><language humanName="Language" mode="e"><String>Groovy</String></language><isLocallyReentrant humanName="Is Locally Reentrant">false</isLocallyReentrant><isLeaf humanName="Is Leaf">false</isLeaf><incoming humanName="Incoming"><controlflow refid="28270b80-de5b-4c3f-a218-cdeb988b853c" refElementId="28270b80-de5b-4c3f-a218-cdeb988b853c" humanType="Control Flow" classType="ControlFlow" name="Control Flow[ -> Fire Munitions]" isRelationship="true" icon="index_files/icon_controlflow_1619402333.jpg"/></incoming><inStructuredNode refid="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" refElementId="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" humanType="Structured Activity Node" classType="StructuredActivityNode" name="" icon="index_files/icon_structuredactivitynode_468001043.jpg" humanName="In Structured Node"/><inGroup humanName="In Group"><structuredactivitynode refid="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" refElementId="6f7afb86-b76f-4557-ace6-0e8dfc035ec1" humanType="Structured Activity Node" classType="StructuredActivityNode" name="" icon="index_files/icon_structuredactivitynode_468001043.jpg"/></inGroup><documentation humanName="Documentation"></documentation><context refid="e713dddf-89cc-4e06-8be6-32aa0e3566e1" refElementId="e713dddf-89cc-4e06-8be6-32aa0e3566e1" humanType="Subsystem" classType="Class" name="Obstacle" icon="index_files/icon_subsystem_1278374552.jpg" humanName="Context"/><body humanName="Body" mode="e"><String>if (pending != null) {
+  println("Fire: " + pending);
+  if (pending.m1 == true) {
+    MUN[0].isFired = true;
+  }
+  if (pending.m2 == true) {
+    MUN[1].isFired = true;
+  }   
+  if (pending.m3 == true) {
+    MUN[2].isFired = true;
+  }
+  if (pending.m4 == true) {
+    MUN[3].isFired = true;
+  }
+  if (pending.m5 == true) {
+    MUN[4].isFired = true;
+  }   
+  if (pending.m6 == true) {
+    MUN[5].isFired = true;
+  }
+  else {
+    println("No Fire!");
+  }
+}</String></body><TO_DO humanName="To Do" mode="s,e"></TO_DO><ActiveHyperlink humanName="Active Hyperlink" mode="e"></ActiveHyperlink><report_appliedStereotype_tags humanName="Applied Stereotype" requireSort="element" mode="s,e"/></opaqueaction></magicdraw>
